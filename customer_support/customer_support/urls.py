@@ -19,5 +19,6 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('tickets/', ),
+    path('tickets/', ),                 #post req
+    path('tickets/<int:ticket_id>/', ), #get req
 ]
