@@ -6,6 +6,8 @@ from base2.models import Tickets
 from .serializers import TicketSerializer
 from base2.models import Chatlogs
 from .serializers import ChatLogsSerializer
+from base2.models import Role
+from .serializers import RoleSerializer
 
 
 @api_view(['GET'])
@@ -61,6 +63,25 @@ def get_all_Chat_Logs(request):
 @api_view(['POST'])
 def set_Chat_Log(request):
     serializer = ChatLogsSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_Role(request, pk):
+    roles = Role.objects.get(role_id=pk)
+    serializer = RoleSerializer(roles, many=False)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_all_Roles(request):
+    roles = Role.objects.all()
+    serializer = RoleSerializer(roles, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def set_Role(request):
+    serializer = RoleSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
