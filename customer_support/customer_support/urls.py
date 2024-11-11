@@ -20,6 +20,4 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('base/', include('api.urls')),
-    # path('tickets/', ),                 #post req
-    # path('tickets/<int:ticket_id>/', ), #get req
 ]
