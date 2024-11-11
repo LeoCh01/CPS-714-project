@@ -4,6 +4,8 @@ from base.models import User
 from .serializers import UserSerializer
 from base.models import Ticket
 from .serializers import TicketSerializer
+from base.models import ChatLogs
+from .serializers import ChatLogsSerializer
 
 
 @api_view(['GET'])
