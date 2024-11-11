@@ -11,3 +11,8 @@ class TicketSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ticket
         fields = '__all__'
+
+class ChatLogsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ChatLogs
+        fields = '__all__'

@@ -37,3 +37,22 @@ def set_Ticket(request):
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
+
+@api_view(['GET'])
+def get_Chat_Log(request,pk):
+    chatlogs = ChatLogs.objects.get(chat_id=pk)
+    serializer = ChatLogsSerializer(chatlogs, many=False)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_all_Chat_Logs(request):
+    chatlogs = ChatLogs.objects.all()
+    serializer = ChatLogsSerializer(chatlogs, many=True)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def set_Chat_Log(request):
+    serializer = ChatLogsSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
