@@ -1,10 +1,10 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from base.models import User
+from base2.models import User
 from .serializers import UserSerializer
-from base.models import Tickets
+from base2.models import Tickets
 from .serializers import TicketSerializer
-from base.models import Chatlogs
+from base2.models import Chatlogs
 from .serializers import ChatLogsSerializer
 
 
@@ -12,6 +12,12 @@ from .serializers import ChatLogsSerializer
 def get_User(request, pk):
     users = User.objects.get(user_id=pk)
     serializer = UserSerializer(users, many=False)
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_all_Users(request):
+    users = User.objects.all()
+    serializer = UserSerializer(users, many=True)
     return Response(serializer.data)
 
 @api_view(['POST'])
@@ -41,7 +47,7 @@ def set_Ticket(request):
     return Response(serializer.data)
 
 @api_view(['GET'])
-def get_Chat_Log(request,pk):
+def get_Chat_Log(request, pk):
     chatlogs = Chatlogs.objects.get(chat_id=pk)
     serializer = ChatLogsSerializer(chatlogs, many=False)
     return Response(serializer.data)
