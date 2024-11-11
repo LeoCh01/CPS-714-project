@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import UserHome from './userPages/UserTicketsHome.jsx';
+import TicketsCreate from './userPages/UserTicketsCreate.jsx';
+import UserTicketsDetail from './userPages/UserTicketsDetail.jsx';
+import AdminHome from './adminPages/AdminTicketsHome.jsx';
+import AdminTicketsDetail from './adminPages/AdminTicketsDetail.jsx';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Router>
+      <Routes>
+        <Route path="/user_tickets" element={<UserHome />} />
+        <Route path="/user_ticket_create" element={<TicketsCreate />} />
+        <Route path="/user_ticket_detail" element={<UserTicketsDetail />} />
+        <Route path="/admin_tickets" element={<AdminHome />} />
+        <Route path="/admin_ticket_detail" element={<AdminTicketsDetail />} />
+      </Routes>
+    </Router>
     </div>
   );
 }
