@@ -1,8 +1,8 @@
 from rest_framework import serializers
-from base2.models import User
-from base2.models import Tickets
-from base2.models import Chatlogs
-from base2.models import Role
+from base.models import User
+from base.models import Tickets
+from base.models import Chatlogs
+from base.models import Role
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

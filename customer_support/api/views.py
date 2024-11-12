@@ -1,12 +1,12 @@
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from base2.models import User
+from base.models import User
 from .serializers import UserSerializer
-from base2.models import Tickets
+from base.models import Tickets
 from .serializers import TicketSerializer
-from base2.models import Chatlogs
+from base.models import Chatlogs
 from .serializers import ChatLogsSerializer
-from base2.models import Role
+from base.models import Role
 from .serializers import RoleSerializer
 
 
