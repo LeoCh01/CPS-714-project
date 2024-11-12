@@ -15,7 +15,7 @@ class Authenticationlogs(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'authenticationlogs'
 
 
@@ -26,7 +26,7 @@ class Chatlogs(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'chatlogs'
 
 
@@ -38,7 +38,7 @@ class Educationalresources(models.Model):
     dateadded = models.CharField(db_column='DateAdded', unique=True, max_length=255)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'educationalresources'
 
 
@@ -48,7 +48,7 @@ class Loyaltypoints(models.Model):
     loyaltyrewards_rewardid = models.ForeignKey('Loyaltyrewards', models.DO_NOTHING, db_column='LoyaltyRewards_RewardID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'loyaltypoints'
 
 
@@ -60,7 +60,7 @@ class Loyaltyrewards(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'loyaltyrewards'
 
 
@@ -70,7 +70,7 @@ class Multiplechoiceoption(models.Model):
     question_surveyposition = models.ForeignKey('Question', models.DO_NOTHING, db_column='Question_SurveyPosition')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'multiplechoiceoption'
 
 
@@ -80,7 +80,7 @@ class Multiplechoicequestion(models.Model):
     surveys_survey = models.ForeignKey('Surveys', models.DO_NOTHING, db_column='Surveys_Survey_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'multiplechoicequestion'
 
 
@@ -91,7 +91,7 @@ class Multiplechoiceresponse(models.Model):
     question_surveyposition = models.ForeignKey('Question', models.DO_NOTHING, db_column='Question_SurveyPosition')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'multiplechoiceresponse'
 
 
@@ -102,7 +102,7 @@ class Products(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'products'
 
 
@@ -115,7 +115,7 @@ class Purchasehistory(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'purchasehistory'
 
 
@@ -125,7 +125,7 @@ class Question(models.Model):
     surveys_survey = models.ForeignKey('Surveys', models.DO_NOTHING, db_column='Surveys_Survey_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'question'
 
 
@@ -137,7 +137,7 @@ class Rewardredemption(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'rewardredemption'
 
 
@@ -148,7 +148,7 @@ class Rewards(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'rewards'
 
 
@@ -157,7 +157,7 @@ class Role(models.Model):
     role_name = models.CharField(unique=True, max_length=45)
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'role'
 
 
@@ -168,7 +168,7 @@ class SurveyResponse(models.Model):
     response_text = models.CharField(db_column='Response_text', max_length=1000)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'survey_response'
 
 
@@ -177,7 +177,7 @@ class Surveys(models.Model):
     survey_response_survey_response = models.ForeignKey(SurveyResponse, models.DO_NOTHING, db_column='Survey_Response_Survey_Response_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'surveys'
 
 
@@ -187,7 +187,7 @@ class Textualquestion(models.Model):
     surveys_survey = models.ForeignKey(Surveys, models.DO_NOTHING, db_column='Surveys_Survey_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'textualquestion'
 
 
@@ -198,7 +198,7 @@ class Textualresponse(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'textualresponse'
 
 
@@ -210,7 +210,7 @@ class TicketResponse(models.Model):
     tickets_ticket = models.ForeignKey('Tickets', models.DO_NOTHING, db_column='Tickets_Ticket_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'ticket_response'
 
 
@@ -223,7 +223,7 @@ class Tickets(models.Model):
     user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'tickets'
 
 
@@ -234,7 +234,7 @@ class Transactions(models.Model):
     date = models.DateField(db_column='Date', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'transactions'
 
 
@@ -247,7 +247,7 @@ class User(models.Model):
     survey_response_survey_response = models.ForeignKey(SurveyResponse, models.DO_NOTHING, db_column='Survey_Response_Survey_Response_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'user'
 
 
@@ -257,7 +257,7 @@ class UserRoles(models.Model):
     role_role = models.ForeignKey(Role, models.DO_NOTHING, db_column='Role_Role_ID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'user_roles'
 
 
@@ -268,5 +268,5 @@ class Userresourceaccess(models.Model):
     educationalresources_resourceid = models.ForeignKey(Educationalresources, models.DO_NOTHING, db_column='EducationalResources_ResourceID')  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        # managed = False
         db_table = 'userresourceaccess'
