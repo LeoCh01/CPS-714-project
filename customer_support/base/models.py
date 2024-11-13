@@ -207,7 +207,7 @@ class TicketResponse(models.Model):
     user_id = models.CharField(db_column='User_ID', max_length=255, blank=True, null=True)  # Field name made lowercase.
     response_text = models.CharField(db_column='Response_text', max_length=255, blank=True, null=True)  # Field name made lowercase.
     responded_at = models.CharField(db_column='Responded_at', max_length=255, blank=True, null=True)  # Field name made lowercase.
-    tickets_ticket = models.ForeignKey('Tickets', models.DO_NOTHING, db_column='Tickets_Ticket_ID')  # Field name made lowercase.
+    # tickets_ticket = models.ForeignKey('Tickets', models.DO_NOTHING, db_column='Tickets_Ticket_ID')  # Field name made lowercase.
 
     class Meta:
         # managed = False
@@ -220,7 +220,7 @@ class Tickets(models.Model):
     priority = models.CharField(db_column='Priority', unique=True, max_length=255)  # Field name made lowercase.
     created_at = models.CharField(db_column='Created_at', max_length=255)  # Field name made lowercase.
     ticket_text = models.CharField(db_column='Ticket_text', max_length=1000)  # Field name made lowercase.
-    user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
+    # user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
         # managed = False

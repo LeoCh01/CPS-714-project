@@ -8,6 +8,8 @@ urlpatterns = [
     path('tickets/<int:pk>/', views.get_Ticket),
     path('tickets/', views.get_all_Tickets),
     path('tickets/create', views.set_Ticket),
+    path('tickets/response/<int:pk>/', views.get_Ticket_response),
+    path('tickets/response', views.set_Ticket_response),
     path('chatlogs/<int:pk>/', views.get_Chat_Log),
     path('chatlogs/', views.get_all_Chat_Logs),
     path('chatlogs/create', views.set_Chat_Log),
