@@ -1,0 +1,106 @@
+/* Container for the ticket list */
+.ticket-container {
+    background-color: #1abc9c;
+    /* Teal background */
+    padding: 20px;
+    color: #fff;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Button to create a new ticket */
+.create-button {
+    background-color: #000;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+/* Header style */
+h2 {
+    font-size: 1.5em;
+    color: #000;
+}
+
+/* Ticket table styling */
+.ticket-table {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+
+/* Header row styling */
+.ticket-header {
+    display: flex;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+/* Ticket row styling */
+.ticket-row {
+    display: flex;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    /* Change cursor to indicate it's clickable */
+}
+
+.ticket-column {
+    flex: 1;
+    color: #fff;
+    text-align: center;
+    font-size: 1em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Modal overlay (background) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure modal is on top of other content */
+}
+
+/* Modal styling */
+.modal {
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Button in the modal */
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
