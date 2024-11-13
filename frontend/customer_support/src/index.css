@@ -7,7 +7,69 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ticket-container {
+  background-color: #1abc9c; 
+  padding: 20px;
+  color: #fff;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+
+.ticket-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.ticket-container input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.ticket-container input:focus {
+  outline: none;
+  border-color: #1abc9c; 
+  background-color: #fff; 
+}
+
+.create-button {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+  background-color: #333;
+}
+
+/* Heading style */
+h2 {
+  font-size: 1.5em;
+  color: #000;
+  margin-bottom: 20px;
+  text-align: center; 
+}
+
+
+@media (max-width: 600px) {
+  .ticket-container {
+    padding: 15px;
+  }
+
 }
