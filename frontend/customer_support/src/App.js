@@ -17,7 +17,7 @@ function App() {
             element={<UserTicketsDetail />}
           />
           <Route path="/admin_tickets" element={<AdminHome />} />
-          <Route path="/admin_ticket_detail" element={<AdminTicketsDetail />} />
+          <Route path="/admin_ticket_detail/:ticketId" element={<AdminTicketsDetail />} />
         </Routes>
       </Router>
     </div>
