@@ -4,6 +4,8 @@ from base.models import User
 from .serializers import UserSerializer
 from base.models import Tickets
 from .serializers import TicketSerializer
+from base.models import TicketResponse
+from .serializers import TicketResponseSerializer
 from base.models import Chatlogs
 from .serializers import ChatLogsSerializer
 from base.models import Role
@@ -44,6 +46,19 @@ def get_all_Tickets(request):
 @api_view(['POST'])
 def set_Ticket(request):
     serializer = TicketSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_Ticket_response(request, pk):
+    tickets_res = TicketResponse.objects.get(ticket_response_id=pk)
+    serializer = TicketResponseSerializer(tickets_res, many=False)
+    return Response(serializer.data)
+
+@api_view(['POST'])
+def set_Ticket_response(request):
+    serializer = TicketResponseSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
     return Response(serializer.data)
