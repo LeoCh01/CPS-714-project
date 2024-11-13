@@ -1,7 +1,5 @@
-/* Container for the ticket list */
 .ticket-container {
     background-color: #1abc9c;
-    /* Teal background */
     padding: 20px;
     color: #fff;
     border-radius: 10px;
@@ -10,7 +8,7 @@
     margin: auto;
 }
 
-/* Button to create a new ticket */
+
 .create-button {
     background-color: #000;
     color: #fff;
@@ -21,20 +19,20 @@
     margin-bottom: 15px;
 }
 
-/* Header style */
+
 h2 {
     font-size: 1.5em;
     color: #000;
 }
 
-/* Ticket table styling */
+
 .ticket-table {
     display: flex;
     flex-direction: column;
     border-radius: 8px;
 }
 
-/* Header row styling */
+
 .ticket-header {
     display: flex;
     background-color: #000;
@@ -43,7 +41,7 @@ h2 {
     margin-bottom: 5px;
 }
 
-/* Ticket row styling */
+
 .ticket-row {
     display: flex;
     background-color: #333;
@@ -51,7 +49,6 @@ h2 {
     border-radius: 5px;
     margin-bottom: 5px;
     cursor: pointer;
-    /* Change cursor to indicate it's clickable */
 }
 
 .ticket-column {
@@ -63,7 +60,7 @@ h2 {
     text-overflow: ellipsis;
 }
 
-/* Modal overlay (background) */
+
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -71,15 +68,14 @@ h2 {
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.7);
-    /* Semi-transparent background */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1000;
-    /* Ensure modal is on top of other content */
+
 }
 
-/* Modal styling */
+
 .modal {
     background: rgb(0, 0, 0);
     padding: 20px;
@@ -89,7 +85,7 @@ h2 {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Button in the modal */
+
 button {
     padding: 10px;
     background-color: #007bff;

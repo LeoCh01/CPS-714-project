@@ -7,8 +7,8 @@ const Tickets = () => {
   const [tickets, setTickets] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [selectedTicket, setSelectedTicket] = useState(null); // Store selected ticket for modal
-  const [isModalOpen, setIsModalOpen] = useState(false); // Track modal visibility
+  const [selectedTicket, setSelectedTicket] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,13 +33,13 @@ const Tickets = () => {
   };
 
   const handleTicketClick = (ticket) => {
-    setSelectedTicket(ticket); // Set selected ticket data
-    setIsModalOpen(true); // Open the modal
+    setSelectedTicket(ticket);
+    setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
-    setIsModalOpen(false); // Close the modal
-    setSelectedTicket(null); // Reset selected ticket
+    setIsModalOpen(false);
+    setSelectedTicket(null);
   };
 
 
@@ -57,7 +57,7 @@ const Tickets = () => {
           <div
             className="ticket-row"
             key={ticket.ticket_id}
-            onClick={() => handleTicketClick(ticket)} // Handle click to open modal
+            onClick={() => handleTicketClick(ticket)}
           >
             <span className="ticket-column">Ticket - {ticket.ticket_id}</span>
             <span className="ticket-column">{ticket.priority}</span>
@@ -66,7 +66,7 @@ const Tickets = () => {
         ))}
       </div>
 
-      {/* Modal for displaying ticket details */}
+
       {isModalOpen && selectedTicket && (
         <div className="modal-overlay">
           <div className="modal">
