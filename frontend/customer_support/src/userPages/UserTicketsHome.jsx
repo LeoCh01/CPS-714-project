@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './TicketList.css';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./TicketList.css";
+import { useNavigate } from "react-router-dom";
 
 const Tickets = () => {
   const [tickets, setTickets] = useState([]);
@@ -14,10 +14,10 @@ const Tickets = () => {
   useEffect(() => {
     const fetchTickets = async () => {
       try {
-        const response = await axios.get('http://127.0.0.1:8000/base/tickets/');
+        const response = await axios.get("http://127.0.0.1:8000/base/tickets/");
         setTickets(response.data);
       } catch (error) {
-        setError('Error fetching tickets');
+        setError("Error fetching tickets");
       } finally {
         setLoading(false);
       }
@@ -29,12 +29,13 @@ const Tickets = () => {
   if (error) return <p>{error}</p>;
 
   const handleCreateClick = () => {
-    navigate('/user_ticket_create');
+    navigate("/user_ticket_create");
   };
 
   const handleTicketClick = (ticket) => {
-    setSelectedTicket(ticket);
-    setIsModalOpen(true);
+    navigate(`/user_ticket_detail/${ticket.ticket_id}`);
+    // setSelectedTicket(ticket);
+    // setIsModalOpen(true);
   };
 
   const handleCloseModal = () => {
@@ -42,10 +43,8 @@ const Tickets = () => {
     setSelectedTicket(null);
   };
 
-
   return (
     <div className="ticket-container">
-      <button className="create-button" onClick={handleCreateClick}>Create</button>
       <h2>Tickets</h2>
       <div className="ticket-table">
         <div className="ticket-header">
@@ -54,30 +53,35 @@ const Tickets = () => {
           <span className="ticket-column">Date Created</span>
         </div>
         {tickets.map((ticket) => (
-          <div
-            className="ticket-row"
-            key={ticket.ticket_id}
-            onClick={() => handleTicketClick(ticket)}
-          >
+          <div className="ticket-row" key={ticket.ticket_id} onClick={() => handleTicketClick(ticket)}>
             <span className="ticket-column">Ticket - {ticket.ticket_id}</span>
-            <span className="ticket-column">{ticket.priority}</span>
-            <span className="ticket-column">{ticket.created_at}</span>
+            <span className="ticket-column">{ticket.ticket_status}</span>
+            <span className="ticket-column">{new Date(ticket.created_at).toLocaleString()}</span>
           </div>
         ))}
       </div>
-
 
       {isModalOpen && selectedTicket && (
         <div className="modal-overlay">
           <div className="modal">
             <h2>Ticket #{selectedTicket.ticket_id}</h2>
-            <p><strong>Priority:</strong> {selectedTicket.priority}</p>
-            <p><strong>Date Created:</strong> {selectedTicket.created_at}</p>
-            <p><strong>Description:</strong> {selectedTicket.ticket_text || 'No description available'}</p>
+            <p>
+              <strong>Priority:</strong> {selectedTicket.priority}
+            </p>
+            <p>
+              <strong>Date Created:</strong> {new Date(selectedTicket.created_at).toLocaleString()}
+            </p>
+            <p>
+              <strong>Description:</strong> {selectedTicket.ticket_text || "No description available"}
+            </p>
             <button onClick={handleCloseModal}>Close</button>
           </div>
         </div>
       )}
+
+      <button className="create-button" onClick={handleCreateClick}>
+        Create
+      </button>
     </div>
   );
 };

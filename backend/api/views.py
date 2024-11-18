@@ -50,10 +50,26 @@ def set_Ticket(request):
         serializer.save()
     return Response(serializer.data)
 
-@api_view(['GET'])
-def get_Ticket_response(request, pk):
+@api_view(['PUT'])
+def update_Ticket(request, pk):
+    tickets = Tickets.objects.get(ticket_id=pk)
+    serializer = TicketSerializer(instance=tickets, data=request.data, partial=True)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+@api_view(['PUT'])
+def update_Ticket_response(request, pk):
     tickets_res = TicketResponse.objects.get(ticket_response_id=pk)
-    serializer = TicketResponseSerializer(tickets_res, many=False)
+    serializer = TicketResponseSerializer(instance=tickets_res, data=request.data, partial=True)
+    if serializer.is_valid():
+        serializer.save()
+    return Response(serializer.data)
+
+@api_view(['GET'])
+def get_all_Ticket_responses(request):
+    tickets_res = TicketResponse.objects.all()
+    serializer = TicketResponseSerializer(tickets_res, many=True)
     return Response(serializer.data)
 
 @api_view(['POST'])

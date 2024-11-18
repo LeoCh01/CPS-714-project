@@ -4,7 +4,9 @@ function BackButton({ className }) {
   let navigate = useNavigate();
   return (
     <>
-      <button className={className} onClick={() => navigate(-1)}>Back</button>
+      <button className={className} onClick={() => navigate(-1)}>
+        Back
+      </button>
     </>
   );
 }

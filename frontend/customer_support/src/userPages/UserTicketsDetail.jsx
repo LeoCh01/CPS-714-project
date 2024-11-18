@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import { useEffect, useState } from "react";
-import './defaultStyle.css';
+import "./defaultStyle.css";
 
 function UserTicketsDetail() {
   const { ticketId } = useParams();
@@ -25,7 +25,7 @@ function UserTicketsDetail() {
   }, [ticketId]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/base/tickets/response/1/`) //Ticket_id Foreign key needs to be implemented
+    fetch(`http://127.0.0.1:8000/base/tickets/response/${ticketId}/`) //Ticket_id Foreign key needs to be implemented
       .then((response) => {
         if (response.ok) {
           return response.json();
@@ -39,11 +39,10 @@ function UserTicketsDetail() {
       });
   }, []);
 
-  const { ticket_id, ticket_status, priority, created_at, ticket_text, user_user } =
-    ticket || {};
+  const { ticket_id, ticket_status, priority, created_at, ticket_text, user_user } = ticket || {};
   const ticket_response = ticketRes?.response_text || "No response yet";
   const ticket_user_res = ticketRes?.user_id || "No response yet";
- 
+
   return (
     <div className="ticket-container">
       <h1>Ticket - {ticket_id}</h1>
@@ -72,7 +71,7 @@ function UserTicketsDetail() {
         </label>
       </div>
 
-      <BackButton className="create-button"/>
+      <BackButton className="create-button" />
     </div>
   );
 }

@@ -6,6 +6,7 @@
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
 from django.db import models
+from django.utils import timezone
 
 
 class Authenticationlogs(models.Model):
@@ -207,7 +208,7 @@ class TicketResponse(models.Model):
     user_id = models.CharField(db_column='User_ID', max_length=255, blank=True, null=True)  # Field name made lowercase.
     response_text = models.CharField(db_column='Response_text', max_length=255, blank=True, null=True)  # Field name made lowercase.
     responded_at = models.CharField(db_column='Responded_at', max_length=255, blank=True, null=True)  # Field name made lowercase.
-    tickets_ticket = models.ForeignKey('Tickets', models.DO_NOTHING, db_column='Tickets_Ticket_ID')  # Field name made lowercase.
+    # tickets_ticket = models.ForeignKey('Tickets', models.DO_NOTHING, db_column='Tickets_Ticket_ID')  # Field name made lowercase.
 
     class Meta:
         # managed = False
@@ -215,12 +216,13 @@ class TicketResponse(models.Model):
 
 
 class Tickets(models.Model):
-    ticket_id = models.IntegerField(db_column='Ticket_ID', primary_key=True)  # Field name made lowercase.
-    ticket_status = models.CharField(db_column='Ticket_status', unique=True, max_length=255)  # Field name made lowercase.
-    priority = models.CharField(db_column='Priority', unique=True, max_length=255)  # Field name made lowercase.
+    ticket_id = models.AutoField(db_column='Ticket_ID', primary_key=True)  # Field name made lowercase.
+    ticket_status = models.CharField(db_column='Ticket_status', max_length=255)  # Field name made lowercase.
+    priority = models.CharField(db_column='Priority',  max_length=255)  # Field name made lowercase.
     created_at = models.CharField(db_column='Created_at', max_length=255)  # Field name made lowercase.
+    created_at = models.DateTimeField(db_column='Created_at', default=timezone.now)  # Field name made lowercase.
     ticket_text = models.CharField(db_column='Ticket_text', max_length=1000)  # Field name made lowercase.
-    user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
+    # user_user = models.ForeignKey('User', models.DO_NOTHING, db_column='User_User_ID')  # Field name made lowercase.
 
     class Meta:
         # managed = False
