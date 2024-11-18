@@ -5,15 +5,25 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
+  
   const [count, setCount] = useState(0)
 
-  const flow = {
+  /*const [messages, setMessages] = useState([
+    { sender: "bot", text: "Hello! How may I assist you today?" }
+  ]); */
 
+  /*const handleUserMsg = async(userMessage) => {
+    setMessages([...messages, { sender: "user", text: userMessage}]); 
+
+  } */
+
+  const flow = {
     "start": {
       "message": "Hello! How may I assist you today?"
     }
-  }
+  } 
 
+    
   return (
     <>
       <div>
