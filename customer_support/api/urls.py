@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import get_gemini_response
+
 
 urlpatterns = [
     path('user/<int:pk>/', views.get_User),
@@ -15,5 +15,4 @@ urlpatterns = [
     path('roles/<int:pk>/', views.get_Role),
     path('roles/', views.get_all_Roles),
     path('roles/create', views.set_Role),
-    path('api/chatbot/', get_gemini_response, name='get_gemini_response')
 ]

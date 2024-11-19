@@ -4,7 +4,7 @@ import TicketsCreate from './userPages/UserTicketsCreate.jsx';
 import UserTicketsDetail from './userPages/UserTicketsDetail.jsx';
 import AdminHome from './adminPages/AdminTicketsHome.jsx';
 import AdminTicketsDetail from './adminPages/AdminTicketsDetail.jsx';
-
+import MyChatBot from './chatbot/chatBot.jsx';
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
         <Route path="/user_ticket_detail" element={<UserTicketsDetail />} />
         <Route path="/admin_tickets" element={<AdminHome />} />
         <Route path="/admin_ticket_detail" element={<AdminTicketsDetail />} />
+        <Route path="/chatbot" element={<MyChatBot />}/>
       </Routes>
     </Router>
     </div>
