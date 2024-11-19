@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./TicketList.css";
 import { useNavigate } from "react-router-dom";
+import MyChatBot from "../components/ChatBot";
 
 const Tickets = () => {
   const [tickets, setTickets] = useState([]);
@@ -82,6 +83,7 @@ const Tickets = () => {
       <button className="create-button" onClick={handleCreateClick}>
         Create
       </button>
+      <MyChatBot />
     </div>
   );
 };

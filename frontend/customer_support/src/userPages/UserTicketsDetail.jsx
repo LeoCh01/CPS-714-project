@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import BackButton from "../components/BackButton";
 import { useEffect, useState } from "react";
 import "./defaultStyle.css";
+import MyChatBot from "../components/ChatBot";
 
 function UserTicketsDetail() {
   const { ticketId } = useParams();
@@ -72,6 +73,7 @@ function UserTicketsDetail() {
       </div>
 
       <BackButton className="create-button" />
+      <MyChatBot />
     </div>
   );
 }

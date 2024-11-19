@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import "../index.css";
+import MyChatBot from "../components/ChatBot";
 
 function UserTicketsCreate() {
   const [priority, setPriority] = useState("");
@@ -60,6 +61,7 @@ function UserTicketsCreate() {
       <button className="create-button" onClick={submitTicket}>
         Submit
       </button>
+      <MyChatBot />
     </div>
   );
 }
