@@ -11,6 +11,7 @@ urlpatterns = [
     path('tickets/update/<int:pk>', views.update_Ticket),
     path('tickets/response/create', views.set_Ticket_response), 
     path('tickets/response/', views.get_all_Ticket_responses),
+    path('tickets/response/<int:pk>', views.get_Ticket_response),
     path('chatlogs/<int:pk>/', views.get_Chat_Log),
     path('chatlogs/', views.get_all_Chat_Logs),
     path('chatlogs/create', views.set_Chat_Log),

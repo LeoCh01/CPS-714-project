@@ -72,6 +72,12 @@ def get_all_Ticket_responses(request):
     serializer = TicketResponseSerializer(tickets_res, many=True)
     return Response(serializer.data)
 
+@api_view(['GET'])
+def get_Ticket_response(request, pk):
+    tickets_res = TicketResponse.objects.get(ticket_response_id=pk)
+    serializer = TicketResponseSerializer(tickets_res, many=False)
+    return Response(serializer.data)
+
 @api_view(['POST'])
 def set_Ticket_response(request):
     serializer = TicketResponseSerializer(data=request.data)

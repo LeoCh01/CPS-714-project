@@ -36,7 +36,7 @@ const MyChatBot = () => {
         for await (const chunk of result.stream) {
           const chunkText = chunk.text();
           text += chunkText;
-          streamMessage(text);
+          //streamMessage(text);
         }
         return text;
       } catch (error) {

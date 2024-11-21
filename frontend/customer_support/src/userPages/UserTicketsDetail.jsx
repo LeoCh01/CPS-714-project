@@ -26,7 +26,7 @@ function UserTicketsDetail() {
   }, [ticketId]);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/base/tickets/response/${ticketId}/`) //Ticket_id Foreign key needs to be implemented
+    fetch(`http://127.0.0.1:8000/base/tickets/response/${ticketId}`) //Ticket_id Foreign key needs to be implemented
       .then((response) => {
         if (response.ok) {
           return response.json();
