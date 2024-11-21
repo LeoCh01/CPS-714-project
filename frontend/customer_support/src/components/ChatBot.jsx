@@ -3,6 +3,13 @@ import { useState } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const MyChatBot = () => {
+  //Chat bot header name
+  const setting = {
+    header:{
+      title: "Live Chat"
+    }
+  }
+
   const genAI = new GoogleGenerativeAI("AIzaSyB5IXg5PJUgaH5uGFDd2dtiMEyblMPbJwQ");
 
   const liveChatInstructions = `You are the virtual assistant for Greenleaf Innovations. GreenLeaf Innovations, a leading provider of eco-friendly home solutions, is launching a Client
@@ -66,7 +73,7 @@ const MyChatBot = () => {
   return (
     <div>
       <h1>Chatbot</h1>
-      <ChatBot flow={flow} />
+      <ChatBot flow={flow} settings={setting} />
     </div>
   );
 };
